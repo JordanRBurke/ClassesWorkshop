@@ -1,29 +1,23 @@
 package com.company;
 
 public class Pet {
-    public Pet(String ownerName, String petName, String homeAddress, int age, char gender, boolean sound) {
-        this.ownerName = ownerName;
-        this.petName = petName;
-        this.homeAddress = homeAddress;
-        this.age = age;
-        this.gender = gender;
-        Sound = sound;
-    }
-
     private String ownerName;
     private String petName;
     private String homeAddress;
     private int age;
     private char gender;
-    private boolean Sound;
 
-    public boolean isSound() {
-        return Sound;
+
+
+    public Pet(String ownerName, String petName, String homeAddress, int age, char gender) {
+        this.ownerName = ownerName;
+        this.petName = petName;
+        this.homeAddress = homeAddress;
+        this.age = age;
+        this.gender = gender;
     }
 
-    public void setSound(boolean sound) {
-        Sound = sound;
-    }
+
 
     public String getOwnerName() {
         return ownerName;
@@ -63,6 +57,13 @@ public class Pet {
 
     public void setGender(char gender) {
         this.gender = gender;
+    }
+
+    protected String makeSound() {
+
+        return "Pets make no sound.";
+    }
+
 
 
 
@@ -75,5 +76,5 @@ public class Pet {
 
 
     }
-}
+
 

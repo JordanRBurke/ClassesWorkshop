@@ -1,16 +1,35 @@
 package com.company;
 
+
+import java.util.Scanner;
 public class Dog extends Pet {
 
 
     private boolean likesWalks;
     private boolean canFetch;
+    private String coatType;
+    Scanner input = new Scanner(System.in) {
 
-    public Dog(boolean likesWalks, boolean canFetch, String coatType) {
-        this.likesWalks = likesWalks;
-        this.canFetch = canFetch;
-        this.coatType = coatType;
+    };
+
+
+    @Override
+    public void setAge(int age) {
+        super.setAge(age);
+
+//        Dog.setAge (input) * 7;
     }
+
+    public Dog(String ownerName, String petName, String homeAddress, int age, char gender) {
+        super(ownerName, petName, homeAddress, age, gender);
+    }
+
+    //    public Dog() {
+//        System.out.println("What is your dog's name?");
+//        setPetName(input.nextLine());
+//        System.out.println("Does " + getPetName() + " like to take walks? True or False");
+//        setLikesWalks(input.nextBoolean());
+//    }
 
     public boolean isLikesWalks() {
         return likesWalks;
@@ -36,10 +55,16 @@ public class Dog extends Pet {
         this.coatType = coatType;
     }
 
-    private String coatType;
 
 
-
-
-
+    @Override
+    protected String makeSound() {
+        return super.makeSound() + "BUT dogs bark";
+    }
 }
+
+
+
+
+
+
